@@ -1,0 +1,32 @@
+---
+variables:
+- group: ValueDevelopment
+- group: ValueProduction
+- group: ValueStage
+
+name: '1.0.0-rc.$(Build.BuildID)'
+
+trigger:
+  branches:
+    include: ["develop", "stage", "main"]
+pr:
+  branches:
+    include: ["develop", "stage", "main"]
+
+pool:
+ name: Azure Pipelines
+
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: "StationKim/devops-templates"
+      ref: refs/heads/develop
+
+stages:
+- template: build/docker.yaml@templates
+  parameters:
+    runSonar: false
+    sonarProject: 'admin-bff'
+    solution: 'admin-bff.sln'
+    image: 'admin-bff'

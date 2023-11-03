@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Api</name>
+    </assembly>
+    <members>
+        <member name="M:Api.Controllers.TermoUsoController.ConsultaTermoDeUso(System.Int32)">
+            <summary>
+            Consulta Termo de Uso
+            </summary>
+        </member>
+        <member name="M:Api.Controllers.UserController.NovoUsuario(Business.Models.User.User)">
+            <summary>
+            Inclui Novo Usuario
+            </summary>
+        </member>
+    </members>
+</doc>
